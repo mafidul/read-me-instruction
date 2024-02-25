@@ -1,0 +1,8 @@
+http://localhost:8083/api/v1/jobseeker/profile/search?pageNumber=0&pageSize=10&sortBy=id&sortDirection=ASC&id=1
+
+@GetMapping(path = "/profile/search", produces = MediaType.APPLICATION_JSON_VALUE)
+	ResponseEntity<Page<LoginModel>> searchEmployer(
+			@RequestParam(name = REQUEST_PARAM_PAGE_NUMBER, required = true) Integer pageNumber,
+			@RequestParam(name = REQUEST_PARAM_PAGE_SIZE, required = true) Integer pageSize,
+			@RequestParam(name = REQUEST_PARAM_SORT_BY, required = false) String sortBy,
+			@RequestParam(name = REQUEST_PARAM_SORT_DIRECTION, required = false) String sortDirection,
